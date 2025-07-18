@@ -38,40 +38,83 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="https://tally.so/r/31QNWg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer no-underline"
+              <button 
+                className="btn-primary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-medium text-white transition-all duration-200"
+                style={{
+                  background: 'hsl(212, 100%, 50%)',
+                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
+                }}
                 onClick={(e) => {
-                  // Try window.open first, fallback to link
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Botón Empezar ahora clickeado');
                   try {
-                    e.preventDefault();
                     window.open('https://tally.so/r/31QNWg', '_blank', 'noopener,noreferrer');
                   } catch (error) {
-                    // If window.open fails, let the link work normally
-                    console.log('Fallback to direct link');
+                    console.error('Error opening Tally form:', error);
+                    // Fallback: create and click a temporary link
+                    const link = document.createElement('a');
+                    link.href = 'https://tally.so/r/31QNWg';
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                   }
+                }}
+                type="button"
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'translateY(-1px)';
+                  e.target.style.background = 'hsl(212, 100%, 35%)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.background = 'hsl(212, 100%, 50%)';
                 }}
               >
                 Empezar ahora
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
               
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="btn-secondary text-lg px-8 py-4"
-                onClick={() => {
-                  const element = document.getElementById('testimonials');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+              <button 
+                className="btn-secondary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-medium text-white border transition-all duration-200"
+                style={{
+                  background: 'transparent',
+                  border: '1px solid hsl(220, 15%, 20%)'
+                }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Botón Ver testimonios clickeado');
+                  try {
+                    const element = document.getElementById('testimonials');
+                    if (element) {
+                      element.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start',
+                        inline: 'nearest'
+                      });
+                      console.log('Scrolling to testimonials section');
+                    } else {
+                      console.error('Testimonials section not found');
+                    }
+                  } catch (error) {
+                    console.error('Error scrolling to testimonials:', error);
                   }
                 }}
+                type="button"
+                onMouseEnter={(e) => {
+                  e.target.style.background = 'hsl(220, 15%, 15%)';
+                  e.target.style.borderColor = 'hsl(212, 100%, 50%)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = 'transparent';
+                  e.target.style.borderColor = 'hsl(220, 15%, 20%)';
+                }}
               >
-                <Play className="w-5 h-5 mr-2" />
+                <Play className="w-5 h-5" />
                 Ver testimonios
-              </Button>
+              </button>
             </div>
 
             {/* Stats */}
