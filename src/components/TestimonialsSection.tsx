@@ -8,44 +8,37 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: "María González",
-      role: "Diseñadora Freelance",
-      company: "Estudio Creativo",
+      id: 1,
+      name: "María García",
+      role: "Emprendedora",
+      company: "Boutique Luna",
+      avatar: "M",
       rating: 5,
-      text: "TaxFlow revolucionó completamente mi gestión fiscal. Antes tardaba días en organizar mis facturas, ahora solo subo todo y mi asesor se encarga de todo. ¡Increíble!",
-      image: "👩‍💼",
-      stats: { saved: "€2,400", time: "15h" },
-      highlight: "Ahorro de tiempo excepcional"
+      text: "Asesfy revolucionó completamente mi gestión fiscal. Antes tardaba días en organizar mis facturas, ahora solo subo todo y mi asesor se encarga de todo. ¡Increíble!",
+      verified: true,
+      location: "Madrid, España"
     },
     {
+      id: 2,
       name: "Carlos Ruiz",
-      role: "Consultor Marketing",
-      company: "Marketing Pro",
+      role: "Freelancer",
+      company: "Diseño Digital",
+      avatar: "C",
       rating: 5,
-      text: "La experiencia es brutalmente buena. El asesor me encontró deducciones que ni sabía que existían. Mi declaración nunca había estado tan optimizada.",
-      image: "👨‍💻",
-      stats: { saved: "€1,800", time: "12h" },
-      highlight: "Optimización fiscal máxima"
+      text: "La tranquilidad que me da saber que un experto gestiona mis impuestos no tiene precio. El proceso es súper fácil y el ahorro en tiempo es brutal.",
+      verified: true,
+      location: "Barcelona, España"
     },
     {
-      name: "Ana Martín",
-      role: "Fotógrafa",
-      company: "Visual Arts",
+      id: 3,
+      name: "Ana López",
+      role: "Autónoma",
+      company: "Consultoría Legal",
+      avatar: "A",
       rating: 5,
-      text: "Como autónoma, siempre me daba pánico la época de impuestos. Con TaxFlow es tan fácil como subir fotos a Instagram. ¡Mi asesor es genial!",
-      image: "👩‍🎨",
-      stats: { saved: "€3,100", time: "8h" },
-      highlight: "Proceso súper intuitivo"
-    },
-    {
-      name: "David López",
-      role: "Desarrollador",
-      company: "Tech Solutions",
-      rating: 5,
-      text: "La tecnología detrás de la plataforma es impresionante. Automatización real con toque humano. Es exactamente lo que necesitaba para mi negocio.",
-      image: "👨‍🔬",
-      stats: { saved: "€2,900", time: "6h" },
-      highlight: "Tecnología de vanguardia"
+      text: "Como autónoma, siempre me daba pánico la época de impuestos. Con Asesfy es tan fácil como subir fotos a Instagram. ¡Mi asesor es genial!",
+      verified: true,
+      location: "Valencia, España"
     }
   ];
 
@@ -109,18 +102,18 @@ const TestimonialsSection = () => {
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4 text-gradient" />
-            <span className="text-foreground/80">Lo que dicen nuestros clientes</span>
+            <Star className="w-4 h-4 text-gradient" />
+            <span className="text-foreground/80">Testimonios reales de clientes satisfechos</span>
           </div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-gradient">Testimonios</span>{" "}
-            <span className="text-foreground">reales</span>
+            <span className="text-gradient">Nuestros clientes</span>{" "}
+            <span className="text-foreground">hablan por nosotros</span>
           </h2>
           
           <p className="text-xl text-foreground/70 leading-relaxed">
-            Descubre cómo TaxFlow ha transformado la gestión fiscal de 
-            <span className="text-gradient font-semibold"> cientos de profesionales</span> como tú.
+            Descubre cómo Asesfy ha transformado la gestión fiscal de{" "}
+            <span className="text-gradient font-semibold">cientos de profesionales</span> como tú.
           </p>
         </div>
 

@@ -14,12 +14,20 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   const navItems = [
-    { name: "Inicio", href: "#home" },
-    { name: "Cómo funciona", href: "#how-it-works" },
-    { name: "Beneficios", href: "#benefits" },
-    { name: "Testimonios", href: "#testimonials" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Inicio", id: "home" },
+    { name: "Cómo funciona", id: "how-it-works" },
+    { name: "Beneficios", id: "benefits" },
+    { name: "Testimonios", id: "testimonials" },
+    { name: "FAQ", id: "faq" },
   ];
 
   return (
@@ -29,28 +37,28 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2 group cursor-pointer">
+          <div className="flex items-center space-x-2 group cursor-pointer" onClick={() => scrollToSection('home')}>
             <div className="relative">
               <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center glow-hover">
                 <Zap className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="absolute inset-0 bg-gradient-primary rounded-xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
-            <span className="text-2xl font-bold text-gradient">TaxFlow</span>
+            <span className="text-2xl font-bold text-gradient">Asesfy</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => scrollToSection(item.id)}
                 className="text-foreground/80 hover:text-foreground font-medium transition-all duration-300 hover:scale-105 relative group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
-              </a>
+              </button>
             ))}
           </div>
 
@@ -78,23 +86,22 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Fixed visibility */}
         <div className={`md:hidden transition-all duration-500 overflow-hidden ${
           isOpen ? "max-h-96 opacity-100 mt-6" : "max-h-0 opacity-0"
         }`}>
-          <div className="glass-strong rounded-2xl p-6 space-y-4">
+          <div className="bg-card/95 backdrop-blur-md rounded-2xl p-6 space-y-4 border border-border shadow-xl">
             {navItems.map((item, index) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="block text-foreground/80 hover:text-foreground font-medium transition-all duration-300 py-2 hover:pl-2"
-                onClick={() => setIsOpen(false)}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left text-foreground hover:text-primary font-medium transition-all duration-300 py-2 hover:pl-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
-            <div className="pt-4 border-t border-white/10">
+            <div className="pt-4 border-t border-border">
               <Button
                 className="btn-primary w-full group"
                 onClick={() => {

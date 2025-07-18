@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle, Play, Shield, Clock, Users } from "lucide-reac
 
 export default function HeroSection() {
   return (
-    <section className="section-padding bg-gradient-to-br from-background to-secondary">
+    <section id="home" className="section-padding bg-gradient-to-br from-background to-secondary">
       <div className="container-width">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -51,9 +51,15 @@ export default function HeroSection() {
                 size="lg" 
                 variant="outline" 
                 className="btn-secondary text-lg px-8 py-4"
+                onClick={() => {
+                  const element = document.getElementById('testimonials');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 <Play className="w-5 h-5 mr-2" />
-                Ver cómo funciona
+                Ver testimonios
               </Button>
             </div>
 

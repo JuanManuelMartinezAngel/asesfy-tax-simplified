@@ -78,7 +78,7 @@ export default function BenefitsSection() {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-background to-secondary">
+    <section id="benefits" className="section-padding bg-gradient-to-b from-background to-secondary">
       <div className="container-width">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">

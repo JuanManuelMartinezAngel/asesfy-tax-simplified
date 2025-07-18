@@ -40,7 +40,7 @@ export default function HowItWorksSection() {
   ];
 
   return (
-    <section className="section-padding">
+    <section id="how-it-works" className="section-padding">
       <div className="container-width">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">

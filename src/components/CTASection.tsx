@@ -116,15 +116,6 @@ const CTASection = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom guarantee */}
-        <div className="mt-16 text-center animate-scale-in">
-          <div className="inline-block bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20">
-            <p className="text-white/90 font-medium">
-              🔒 Garantía total: Si no quedas satisfecho, te devolvemos el dinero
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
