@@ -16,7 +16,8 @@ const TestimonialsSection = () => {
       rating: 5,
       text: "Asesfy revolucionó completamente mi gestión fiscal. Antes tardaba días en organizar mis facturas, ahora solo subo todo y mi asesor se encarga de todo. ¡Increíble!",
       verified: true,
-      location: "Madrid, España"
+      location: "Madrid, España",
+      stats: { saved: "€2,400", time: "15h" }
     },
     {
       id: 2,
@@ -27,7 +28,8 @@ const TestimonialsSection = () => {
       rating: 5,
       text: "La tranquilidad que me da saber que un experto gestiona mis impuestos no tiene precio. El proceso es súper fácil y el ahorro en tiempo es brutal.",
       verified: true,
-      location: "Barcelona, España"
+      location: "Barcelona, España",
+      stats: { saved: "€1,800", time: "12h" }
     },
     {
       id: 3,
@@ -38,7 +40,8 @@ const TestimonialsSection = () => {
       rating: 5,
       text: "Como autónoma, siempre me daba pánico la época de impuestos. Con Asesfy es tan fácil como subir fotos a Instagram. ¡Mi asesor es genial!",
       verified: true,
-      location: "Valencia, España"
+      location: "Valencia, España",
+      stats: { saved: "€3,100", time: "8h" }
     }
   ];
 
