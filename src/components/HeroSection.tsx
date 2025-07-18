@@ -74,7 +74,10 @@ const HeroSection = () => {
                   className="flex items-center gap-3 glass px-4 py-2 rounded-xl glow-hover"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <item.icon className={`w-5 h-5 ${item.color}`} />
+                  {(() => {
+                    const IconComponent = item.icon;
+                    return <IconComponent className={`w-5 h-5 ${item.color}`} />;
+                  })()}
                   <span className="font-medium text-foreground">{item.text}</span>
                 </div>
               ))}
