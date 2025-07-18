@@ -100,16 +100,16 @@ const HowItWorksSection = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Step Details */}
             <div className="space-y-8 animate-slide-in-left">
-                              <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${steps[activeStep].color} flex items-center justify-center glow`}>
-                      {(() => {
-                        const IconComponent = steps[activeStep].icon;
-                        return <IconComponent className="w-8 h-8 text-white" />;
-                      })()}
-                    </div>
-                    <div className="text-4xl">{steps[activeStep].image}</div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${steps[activeStep].color} flex items-center justify-center glow`}>
+                    {(() => {
+                      const IconComponent = steps[activeStep].icon;
+                      return <IconComponent className="w-8 h-8 text-white" />;
+                    })()}
                   </div>
+                  <div className="text-4xl">{steps[activeStep].image}</div>
+                </div>
                 
                 <h3 className="text-3xl font-bold text-foreground">
                   {steps[activeStep].title}
