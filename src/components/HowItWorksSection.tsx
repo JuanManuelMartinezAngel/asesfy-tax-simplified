@@ -2,20 +2,16 @@ import { useState } from "react";
 import { FileText, UserCheck, CheckCircle, ArrowRight, Upload, Search, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Helper component for dynamic icons
-const DynamicIcon = ({ IconComponent, className }: { IconComponent: any, className: string }) => {
-  return <IconComponent className={className} />;
-};
-
 const HowItWorksSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
+  // Static step data without dynamic icons
   const steps = [
     {
       id: 1,
       title: "Sube tus documentos",
       description: "Arrastra y suelta tus facturas, recibos y documentos fiscales en nuestra plataforma segura. Nuestro sistema los organiza automáticamente.",
-      icon: Upload,
+      iconType: "upload",
       color: "from-blue-500 to-cyan-500",
       features: ["Subida segura y encriptada", "Organización automática", "Múltiples formatos"],
       image: "📄"
@@ -24,7 +20,7 @@ const HowItWorksSection = () => {
       id: 2,
       title: "Tu asesor revisa todo",
       description: "Un asesor fiscal certificado revisa toda tu información, detecta deducciones y optimiza tu declaración para máximo ahorro.",
-      icon: Search,
+      iconType: "search",
       color: "from-purple-500 to-pink-500",
       features: ["Asesor personal asignado", "Revisión exhaustiva", "Optimización fiscal"],
       image: "👨‍💼"
@@ -33,12 +29,26 @@ const HowItWorksSection = () => {
       id: 3,
       title: "Recibes todo listo",
       description: "Recibe tu declaración completada, informes detallados y toda la documentación oficial lista para presentar.",
-      icon: Download,
+      iconType: "download",
       color: "from-emerald-500 to-teal-500",
       features: ["Declaración completada", "Informes detallados", "Documentación oficial"],
       image: "✅"
     }
   ];
+
+  // Function to render static icons based on type
+  const renderStepIcon = (iconType: string, className: string) => {
+    switch (iconType) {
+      case "upload":
+        return <Upload className={className} />;
+      case "search":
+        return <Search className={className} />;
+      case "download":
+        return <Download className={className} />;
+      default:
+        return <Upload className={className} />;
+    }
+  };
 
   return (
     <section id="how-it-works" className="section-container">
@@ -86,7 +96,7 @@ const HowItWorksSection = () => {
                         ? "bg-white/20"
                         : "bg-white/10"
                     }`}>
-                      <DynamicIcon IconComponent={step.icon} className="w-4 h-4" />
+                      {renderStepIcon(step.iconType, "w-4 h-4")}
                     </div>
                     <span className="font-medium hidden sm:block">{step.title}</span>
                   </button>
@@ -105,7 +115,7 @@ const HowItWorksSection = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${steps[activeStep].color} flex items-center justify-center glow`}>
-                    <DynamicIcon IconComponent={steps[activeStep].icon} className="w-8 h-8 text-white" />
+                    {renderStepIcon(steps[activeStep].iconType, "w-8 h-8 text-white")}
                   </div>
                   <div className="text-4xl">{steps[activeStep].image}</div>
                 </div>
@@ -160,7 +170,7 @@ const HowItWorksSection = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${steps[activeStep].color} flex items-center justify-center`}>
-                        <DynamicIcon IconComponent={steps[activeStep].icon} className="w-6 h-6 text-white" />
+                        {renderStepIcon(steps[activeStep].iconType, "w-6 h-6 text-white")}
                       </div>
                       <div>
                         <h4 className="font-bold text-foreground">Paso {activeStep + 1}</h4>

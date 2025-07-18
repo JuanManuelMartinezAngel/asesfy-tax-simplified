@@ -2,11 +2,6 @@ import { useState, useEffect } from "react";
 import { Star, Quote, ChevronLeft, ChevronRight, Sparkles, TrendingUp, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Helper component for dynamic icons
-const DynamicIcon = ({ IconComponent, className }: { IconComponent: any, className: string }) => {
-  return <IconComponent className={className} />;
-};
-
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -55,11 +50,27 @@ const TestimonialsSection = () => {
   ];
 
   const stats = [
-    { value: "4.9/5", label: "Valoración media", icon: Star },
-    { value: "98%", label: "Clientes satisfechos", icon: Award },
-    { value: "24h", label: "Tiempo promedio", icon: Clock },
-    { value: "€2.3k", label: "Ahorro medio", icon: TrendingUp }
+    { value: "4.9/5", label: "Valoración media", iconType: "star" },
+    { value: "98%", label: "Clientes satisfechos", iconType: "award" },
+    { value: "24h", label: "Tiempo promedio", iconType: "clock" },
+    { value: "€2.3k", label: "Ahorro medio", iconType: "trending" }
   ];
+
+  // Function to render static icons based on type
+  const renderStatIcon = (iconType: string, className: string) => {
+    switch (iconType) {
+      case "star":
+        return <Star className={className} />;
+      case "award":
+        return <Award className={className} />;
+      case "clock":
+        return <Clock className={className} />;
+      case "trending":
+        return <TrendingUp className={className} />;
+      default:
+        return <Star className={className} />;
+    }
+  };
 
   // Auto-play functionality
   useEffect(() => {
@@ -122,7 +133,7 @@ const TestimonialsSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-12 h-12 mx-auto mb-4 bg-gradient-primary/20 rounded-xl flex items-center justify-center group-hover:bg-gradient-primary/30 transition-colors duration-300">
-                <DynamicIcon IconComponent={stat.icon} className="w-6 h-6 text-gradient" />
+                {renderStatIcon(stat.iconType, "w-6 h-6 text-gradient")}
               </div>
               <div className="text-2xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">
                 {stat.value}

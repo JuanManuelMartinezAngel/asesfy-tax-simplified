@@ -1,15 +1,10 @@
 import { Shield, Clock, DollarSign, UserCheck, Zap, Star, CheckCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Helper component for dynamic icons
-const DynamicIcon = ({ IconComponent, className }: { IconComponent: any, className: string }) => {
-  return <IconComponent className={className} />;
-};
-
 const BenefitsSection = () => {
   const benefits = [
     {
-      icon: Shield,
+      iconType: "shield",
       title: "Seguridad total",
       description: "Encriptación de nivel bancario para proteger toda tu información personal y fiscal.",
       features: ["Cifrado AES-256", "RGPD compliance", "Acceso restringido"],
@@ -18,7 +13,7 @@ const BenefitsSection = () => {
       delay: "0s"
     },
     {
-      icon: Clock,
+      iconType: "clock",
       title: "Ahorra tiempo",
       description: "Dedica tu tiempo a lo que realmente importa. Nosotros nos encargamos de toda la burocracia fiscal.",
       features: ["Proceso automatizado", "Sin colas ni esperas", "Disponible 24/7"],
@@ -27,7 +22,7 @@ const BenefitsSection = () => {
       delay: "0.2s"
     },
     {
-      icon: DollarSign,
+      iconType: "dollar",
       title: "Maximiza tus ahorros",
       description: "Identificamos todas las deducciones posibles para optimizar tu declaración y ahorrarte dinero.",
       features: ["Análisis exhaustivo", "Deducciones máximas", "Estrategias fiscales"],
@@ -36,7 +31,7 @@ const BenefitsSection = () => {
       delay: "0.4s"
     },
     {
-      icon: UserCheck,
+      iconType: "usercheck",
       title: "Asesor personal",
       description: "Un profesional fiscal certificado asignado exclusivamente para gestionar todos tus trámites.",
       features: ["Asesor dedicado", "Comunicación directa", "Experiencia certificada"],
@@ -47,11 +42,42 @@ const BenefitsSection = () => {
   ];
 
   const stats = [
-    { value: "500+", label: "Clientes satisfechos", icon: Star },
-    { value: "24h", label: "Tiempo promedio", icon: Clock },
-    { value: "98%", label: "Precisión fiscal", icon: CheckCircle },
-    { value: "€2.5k", label: "Ahorro promedio", icon: DollarSign }
+    { value: "500+", label: "Clientes satisfechos", iconType: "star" },
+    { value: "24h", label: "Tiempo promedio", iconType: "clock" },
+    { value: "98%", label: "Precisión fiscal", iconType: "checkcircle" },
+    { value: "€2.5k", label: "Ahorro promedio", iconType: "dollar" }
   ];
+
+  // Function to render static icons based on type
+  const renderBenefitIcon = (iconType: string, className: string) => {
+    switch (iconType) {
+      case "shield":
+        return <Shield className={className} />;
+      case "clock":
+        return <Clock className={className} />;
+      case "dollar":
+        return <DollarSign className={className} />;
+      case "usercheck":
+        return <UserCheck className={className} />;
+      default:
+        return <Shield className={className} />;
+    }
+  };
+
+  const renderStatIcon = (iconType: string, className: string) => {
+    switch (iconType) {
+      case "star":
+        return <Star className={className} />;
+      case "clock":
+        return <Clock className={className} />;
+      case "checkcircle":
+        return <CheckCircle className={className} />;
+      case "dollar":
+        return <DollarSign className={className} />;
+      default:
+        return <Star className={className} />;
+    }
+  };
 
   return (
     <section id="benefits" className="section-container">
@@ -96,7 +122,7 @@ const BenefitsSection = () => {
                   {/* Icon */}
                   <div className="relative">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center glow group-hover:scale-110 transition-transform duration-300`}>
-                      <DynamicIcon IconComponent={benefit.icon} className="w-8 h-8 text-white" />
+                      {renderBenefitIcon(benefit.iconType, "w-8 h-8 text-white")}
                     </div>
                     {/* Floating particles around icon */}
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-white/40 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -157,7 +183,7 @@ const BenefitsSection = () => {
               >
                 <div className="relative mb-4">
                   <div className="w-16 h-16 mx-auto bg-gradient-primary/20 rounded-2xl flex items-center justify-center group-hover:bg-gradient-primary/30 transition-colors duration-300">
-                    <DynamicIcon IconComponent={stat.icon} className="w-8 h-8 text-gradient" />
+                    {renderStatIcon(stat.iconType, "w-8 h-8 text-gradient")}
                   </div>
                   {/* Glow effect */}
                   <div className="absolute inset-0 w-16 h-16 mx-auto bg-gradient-primary/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

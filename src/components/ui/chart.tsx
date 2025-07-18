@@ -3,11 +3,6 @@ import * as RechartsPrimitive from "recharts"
 
 import { cn } from "@/lib/utils"
 
-// Helper component for dynamic icons
-const DynamicIcon = ({ IconComponent }: { IconComponent: any }) => {
-  return <IconComponent />;
-};
-
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: "", dark: ".dark" } as const
 
@@ -205,8 +200,8 @@ const ChartTooltipContent = React.forwardRef<
                   formatter(item.value, item.name, item, index, item.payload)
                 ) : (
                   <>
-                                          {itemConfig?.icon ? (
-                        <DynamicIcon IconComponent={itemConfig.icon} />
+                      {itemConfig?.icon ? (
+                        React.createElement(itemConfig.icon)
                       ) : (
                       !hideIndicator && (
                         <div
@@ -300,7 +295,7 @@ const ChartLegendContent = React.forwardRef<
               )}
             >
               {itemConfig?.icon && !hideIcon ? (
-                <DynamicIcon IconComponent={itemConfig.icon} />
+                React.createElement(itemConfig.icon)
               ) : (
                 <div
                   className="h-2 w-2 shrink-0 rounded-[2px]"
