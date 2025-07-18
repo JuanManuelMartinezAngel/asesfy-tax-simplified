@@ -105,7 +105,10 @@ const FAQSection = () => {
               <p className="mb-4 opacity-90">
                 Nuestro equipo está aquí para ayudarte con cualquier duda
               </p>
-              <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button 
+                className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                onClick={() => window.open('https://tally.so/r/31QNWg', '_blank')}
+              >
                 Contáctanos directamente
               </button>
             </div>

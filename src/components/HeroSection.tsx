@@ -46,7 +46,7 @@ const HeroSection = () => {
             <Button 
               size="lg"
               className="btn-hero group"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.open('https://tally.so/r/31QNWg', '_blank')}
             >
               Quiero que me lleven los impuestos
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -46,6 +46,7 @@ const CTASection = () => {
               <Button 
                 size="lg"
                 className="bg-white text-primary hover:bg-gray-100 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
+                onClick={() => window.open('https://tally.so/r/31QNWg', '_blank')}
               >
                 <Phone className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
                 Quiero hablar con un asesor
@@ -55,6 +56,7 @@ const CTASection = () => {
                 size="lg"
                 variant="secondary"
                 className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white font-semibold px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300 group"
+                onClick={() => window.open('https://tally.so/r/31QNWg', '_blank')}
               >
                 <Info className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
                 Solo quiero más info por ahora
