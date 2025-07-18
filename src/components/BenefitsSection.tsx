@@ -8,8 +8,8 @@ const BenefitsSection = () => {
       title: "Seguridad total",
       description: "Encriptación de nivel bancario para proteger toda tu información personal y fiscal.",
       features: ["Cifrado AES-256", "RGPD compliance", "Acceso restringido"],
-      color: "from-emerald-500 to-teal-500",
-      gradient: "bg-emerald-500/10",
+      color: "from-teal-500 to-cyan-600",
+      gradient: "bg-teal-500/10",
       delay: "0s"
     },
     {
@@ -17,7 +17,7 @@ const BenefitsSection = () => {
       title: "Ahorra tiempo",
       description: "Dedica tu tiempo a lo que realmente importa. Nosotros nos encargamos de toda la burocracia fiscal.",
       features: ["Proceso automatizado", "Sin colas ni esperas", "Disponible 24/7"],
-      color: "from-blue-500 to-cyan-500",
+      color: "from-blue-500 to-blue-600",
       gradient: "bg-blue-500/10",
       delay: "0.2s"
     },
@@ -26,8 +26,8 @@ const BenefitsSection = () => {
       title: "Maximiza tus ahorros",
       description: "Identificamos todas las deducciones posibles para optimizar tu declaración y ahorrarte dinero.",
       features: ["Análisis exhaustivo", "Deducciones máximas", "Estrategias fiscales"],
-      color: "from-purple-500 to-pink-500",
-      gradient: "bg-purple-500/10",
+      color: "from-cyan-500 to-teal-600",
+      gradient: "bg-cyan-500/10",
       delay: "0.4s"
     },
     {
@@ -35,8 +35,8 @@ const BenefitsSection = () => {
       title: "Asesor personal",
       description: "Un profesional fiscal certificado asignado exclusivamente para gestionar todos tus trámites.",
       features: ["Asesor dedicado", "Comunicación directa", "Experiencia certificada"],
-      color: "from-orange-500 to-red-500",
-      gradient: "bg-orange-500/10",
+      color: "from-blue-600 to-slate-700",
+      gradient: "bg-blue-600/10",
       delay: "0.6s"
     }
   ];

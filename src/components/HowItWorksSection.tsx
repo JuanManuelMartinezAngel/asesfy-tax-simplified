@@ -12,7 +12,7 @@ const HowItWorksSection = () => {
       title: "Sube tus documentos",
       description: "Arrastra y suelta tus facturas, recibos y documentos fiscales en nuestra plataforma segura. Nuestro sistema los organiza automáticamente.",
       iconType: "upload",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-blue-500 to-blue-600",
       features: ["Subida segura y encriptada", "Organización automática", "Múltiples formatos"],
       image: "📄"
     },
@@ -21,7 +21,7 @@ const HowItWorksSection = () => {
       title: "Tu asesor revisa todo",
       description: "Un asesor fiscal certificado revisa toda tu información, detecta deducciones y optimiza tu declaración para máximo ahorro.",
       iconType: "search",
-      color: "from-purple-500 to-pink-500",
+      color: "from-teal-500 to-cyan-500",
       features: ["Asesor personal asignado", "Revisión exhaustiva", "Optimización fiscal"],
       image: "👨‍💼"
     },
@@ -30,7 +30,7 @@ const HowItWorksSection = () => {
       title: "Recibes todo listo",
       description: "Recibe tu declaración completada, informes detallados y toda la documentación oficial lista para presentar.",
       iconType: "download",
-      color: "from-emerald-500 to-teal-500",
+      color: "from-cyan-500 to-teal-600",
       features: ["Declaración completada", "Informes detallados", "Documentación oficial"],
       image: "✅"
     }
