@@ -190,6 +190,10 @@ All colors MUST be HSL.
     animation: float 3s ease-in-out infinite;
   }
 
+  .hover\\:scale-102:hover {
+    transform: scale(1.02);
+  }
+
   /* Gradient text */
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-purple bg-clip-text text-transparent;
