@@ -1,6 +1,11 @@
 import { Shield, Clock, DollarSign, UserCheck, Zap, Star, CheckCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Helper component for dynamic icons
+const DynamicIcon = ({ IconComponent, className }: { IconComponent: any, className: string }) => {
+  return <IconComponent className={className} />;
+};
+
 const BenefitsSection = () => {
   const benefits = [
     {
@@ -91,10 +96,7 @@ const BenefitsSection = () => {
                   {/* Icon */}
                   <div className="relative">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center glow group-hover:scale-110 transition-transform duration-300`}>
-                      {(() => {
-                        const IconComponent = benefit.icon;
-                        return <IconComponent className="w-8 h-8 text-white" />;
-                      })()}
+                      <DynamicIcon IconComponent={benefit.icon} className="w-8 h-8 text-white" />
                     </div>
                     {/* Floating particles around icon */}
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-white/40 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -155,10 +157,7 @@ const BenefitsSection = () => {
               >
                 <div className="relative mb-4">
                   <div className="w-16 h-16 mx-auto bg-gradient-primary/20 rounded-2xl flex items-center justify-center group-hover:bg-gradient-primary/30 transition-colors duration-300">
-                    {(() => {
-                      const IconComponent = stat.icon;
-                      return <IconComponent className="w-8 h-8 text-gradient" />;
-                    })()}
+                    <DynamicIcon IconComponent={stat.icon} className="w-8 h-8 text-gradient" />
                   </div>
                   {/* Glow effect */}
                   <div className="absolute inset-0 w-16 h-16 mx-auto bg-gradient-primary/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

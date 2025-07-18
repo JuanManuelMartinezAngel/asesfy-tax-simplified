@@ -2,6 +2,11 @@ import { useState } from "react";
 import { FileText, UserCheck, CheckCircle, ArrowRight, Upload, Search, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Helper component for dynamic icons
+const DynamicIcon = ({ IconComponent, className }: { IconComponent: any, className: string }) => {
+  return <IconComponent className={className} />;
+};
+
 const HowItWorksSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
@@ -81,10 +86,7 @@ const HowItWorksSection = () => {
                         ? "bg-white/20"
                         : "bg-white/10"
                     }`}>
-                      {(() => {
-                        const IconComponent = step.icon;
-                        return <IconComponent className="w-4 h-4" />;
-                      })()}
+                      <DynamicIcon IconComponent={step.icon} className="w-4 h-4" />
                     </div>
                     <span className="font-medium hidden sm:block">{step.title}</span>
                   </button>
@@ -103,10 +105,7 @@ const HowItWorksSection = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${steps[activeStep].color} flex items-center justify-center glow`}>
-                    {(() => {
-                      const IconComponent = steps[activeStep].icon;
-                      return <IconComponent className="w-8 h-8 text-white" />;
-                    })()}
+                    <DynamicIcon IconComponent={steps[activeStep].icon} className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-4xl">{steps[activeStep].image}</div>
                 </div>
@@ -161,10 +160,7 @@ const HowItWorksSection = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${steps[activeStep].color} flex items-center justify-center`}>
-                        {(() => {
-                          const IconComponent = steps[activeStep].icon;
-                          return <IconComponent className="w-6 h-6 text-white" />;
-                        })()}
+                        <DynamicIcon IconComponent={steps[activeStep].icon} className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h4 className="font-bold text-foreground">Paso {activeStep + 1}</h4>
