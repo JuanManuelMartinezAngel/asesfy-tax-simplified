@@ -38,14 +38,25 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="btn-primary text-lg px-8 py-4"
-                onClick={() => window.open('https://tally.so/r/31QNWg', '_blank')}
+              <a 
+                href="https://tally.so/r/31QNWg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer no-underline"
+                onClick={(e) => {
+                  // Try window.open first, fallback to link
+                  try {
+                    e.preventDefault();
+                    window.open('https://tally.so/r/31QNWg', '_blank', 'noopener,noreferrer');
+                  } catch (error) {
+                    // If window.open fails, let the link work normally
+                    console.log('Fallback to direct link');
+                  }
+                }}
               >
                 Empezar ahora
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+                <ArrowRight className="w-5 h-5" />
+              </a>
               
               <Button 
                 size="lg" 

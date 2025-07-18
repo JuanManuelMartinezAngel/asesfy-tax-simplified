@@ -116,6 +116,24 @@
     box-shadow: var(--shadow-lg);
     background: hsl(var(--primary-dark));
   }
+
+  /* Ensure links styled as buttons work properly */
+  a.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+  }
+  
+  a.btn-primary:hover {
+    color: white;
+    text-decoration: none;
+  }
+  
+  a.btn-primary:visited {
+    color: white;
+  }
   
   .btn-secondary {
     @apply px-6 py-3 rounded-lg font-medium text-white border transition-all duration-200;
