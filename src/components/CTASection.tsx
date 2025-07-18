@@ -53,8 +53,8 @@ const CTASection = () => {
               
               <Button 
                 size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300 group"
+                variant="secondary"
+                className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white font-semibold px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300 group"
               >
                 <Info className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
                 Solo quiero más info por ahora
