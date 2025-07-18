@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const HowItWorksSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  // Static step data without dynamic icons
+  // Static step data - NO dynamic icons, only string identifiers
   const steps = [
     {
       id: 1,
@@ -36,18 +36,12 @@ const HowItWorksSection = () => {
     }
   ];
 
-  // Function to render static icons based on type
-  const renderStepIcon = (iconType: string, className: string) => {
-    switch (iconType) {
-      case "upload":
-        return <Upload className={className} />;
-      case "search":
-        return <Search className={className} />;
-      case "download":
-        return <Download className={className} />;
-      default:
-        return <Upload className={className} />;
-    }
+  // STATIC icon rendering function - NO dynamic component references
+  const getStepIcon = (iconType: string, className: string) => {
+    if (iconType === "upload") return <Upload className={className} />;
+    if (iconType === "search") return <Search className={className} />;
+    if (iconType === "download") return <Download className={className} />;
+    return <Upload className={className} />; // fallback
   };
 
   return (
@@ -96,7 +90,7 @@ const HowItWorksSection = () => {
                         ? "bg-white/20"
                         : "bg-white/10"
                     }`}>
-                      {renderStepIcon(step.iconType, "w-4 h-4")}
+                      {getStepIcon(step.iconType, "w-4 h-4")}
                     </div>
                     <span className="font-medium hidden sm:block">{step.title}</span>
                   </button>
@@ -115,7 +109,7 @@ const HowItWorksSection = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${steps[activeStep].color} flex items-center justify-center glow`}>
-                    {renderStepIcon(steps[activeStep].iconType, "w-8 h-8 text-white")}
+                    {getStepIcon(steps[activeStep].iconType, "w-8 h-8 text-white")}
                   </div>
                   <div className="text-4xl">{steps[activeStep].image}</div>
                 </div>
@@ -170,7 +164,7 @@ const HowItWorksSection = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${steps[activeStep].color} flex items-center justify-center`}>
-                        {renderStepIcon(steps[activeStep].iconType, "w-6 h-6 text-white")}
+                        {getStepIcon(steps[activeStep].iconType, "w-6 h-6 text-white")}
                       </div>
                       <div>
                         <h4 className="font-bold text-foreground">Paso {activeStep + 1}</h4>
