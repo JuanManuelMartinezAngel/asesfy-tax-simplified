@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -37,14 +37,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2 group cursor-pointer" onClick={() => scrollToSection('home')}>
+          <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => scrollToSection('home')}>
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center glow-hover">
-                <Zap className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-primary rounded-xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300"></div>
+              <img 
+                src="/asesfy-logo.svg" 
+                alt="Asesfy Logo" 
+                className="w-12 h-8 object-contain group-hover:scale-110 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-lg opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300"></div>
             </div>
-            <span className="text-2xl font-bold text-gradient">Asesfy</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -69,7 +70,6 @@ const Navbar = () => {
               onClick={() => window.open('https://tally.so/r/31QNWg', '_blank')}
             >
               <span className="mr-2">Empezar ahora</span>
-              <Zap className="w-4 h-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
             </Button>
           </div>
 
@@ -110,7 +110,6 @@ const Navbar = () => {
                 }}
               >
                 <span className="mr-2">Empezar ahora</span>
-                <Zap className="w-4 h-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
               </Button>
             </div>
           </div>
