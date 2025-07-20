@@ -40,9 +40,9 @@ const Navbar = () => {
           <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => scrollToSection('home')}>
             <div className="flex items-center space-x-2">
               <img 
-                src="/Imagen de WhatsApp 2025-07-20 a las 19.10.29_c6e08d02.jpg" 
+                src="/asesfy-logo.svg" 
                 alt="Sesfy Logo" 
-                className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300"
+                className="w-8 h-6 object-contain group-hover:scale-110 transition-transform duration-300"
               />
               <span className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
                 sesfy
