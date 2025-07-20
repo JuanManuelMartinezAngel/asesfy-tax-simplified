@@ -25,32 +25,17 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                className="sesfy-button text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-semibold transition-all duration-300"
+              <a
+                href="https://tally.so/r/31QNWg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sesfy-button text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-semibold transition-all duration-300 no-underline"
                 style={{
                   background: 'hsl(174, 72%, 56%)',
                   color: 'hsl(217, 32%, 17%)',
-                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2)'
+                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2)',
+                  textDecoration: 'none'
                 }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log('Botón Empezar ahora clickeado');
-                  try {
-                    window.open('https://tally.so/r/31QNWg', '_blank', 'noopener,noreferrer');
-                  } catch (error) {
-                    console.error('Error opening Tally form:', error);
-                    // Fallback: create and click a temporary link
-                    const link = document.createElement('a');
-                    link.href = 'https://tally.so/r/31QNWg';
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }
-                }}
-                type="button"
                 onMouseEnter={(e) => {
                   e.target.style.transform = 'translateY(-2px)';
                   e.target.style.background = 'hsl(174, 82%, 70%)';
@@ -62,7 +47,7 @@ export default function HeroSection() {
               >
                 Empezar ahora
                 <ArrowRight className="w-5 h-5" />
-              </button>
+              </a>
               
               <button 
                 className="btn-secondary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-medium text-white border transition-all duration-200"

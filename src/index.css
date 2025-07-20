@@ -226,6 +226,32 @@
     box-shadow: var(--shadow-lg);
     background: hsl(var(--primary-light));
   }
+
+  /* Ensure anchor tags styled as sesfy-button work perfectly */
+  a.sesfy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+  
+  a.sesfy-button:hover {
+    text-decoration: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+  
+  a.sesfy-button:visited {
+    text-decoration: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+  
+  a.sesfy-button:focus {
+    text-decoration: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
 }
 
 /* Simple animations */
