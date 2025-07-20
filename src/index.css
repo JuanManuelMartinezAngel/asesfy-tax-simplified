@@ -308,3 +308,32 @@
   background: hsl(var(--primary) / 0.3);
   color: hsl(var(--foreground));
 }
+
+/* Sesfy Button Styles */
+.sesfy-button {
+  background: #4ECDC4 !important;
+  color: #2C3E50 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
+  text-decoration: none !important;
+  user-select: none !important;
+  display: inline-flex !important;
+  transition: all 0.3s ease !important;
+}
+
+.sesfy-button:hover {
+  transform: translateY(-2px) !important;
+  background: #5DD9D2 !important;
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.3) !important;
+  color: #2C3E50 !important;
+  text-decoration: none !important;
+}
+
+.sesfy-button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sesfy-button:focus {
+  outline: 2px solid #4ECDC4 !important;
+  outline-offset: 2px !important;
+}

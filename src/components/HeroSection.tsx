@@ -25,33 +25,23 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <div
-                onClick={() => {
-                  console.log('Redirigiendo a Tally...');
-                  window.location.href = 'https://tally.so/r/31QNWg';
-                }}
-                className="sesfy-button text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-semibold transition-all duration-300"
+              <a
+                href="https://tally.so/r/31QNWg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sesfy-button text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
                 style={{
                   background: '#4ECDC4',
                   color: '#2C3E50',
                   boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.2)',
                   textDecoration: 'none',
-                  userSelect: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = 'translateY(-2px)';
-                  e.target.style.background = '#5DD9D2';
-                  e.target.style.boxShadow = '0 8px 15px -3px rgba(0, 0, 0, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.background = '#4ECDC4';
-                  e.target.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.2)';
+                  userSelect: 'none',
+                  display: 'inline-flex'
                 }}
               >
                 Empezar ahora
                 <ArrowRight className="w-5 h-5" />
-              </div>
+              </a>
               
               <button 
                 className="btn-secondary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-medium text-white border transition-all duration-200"
