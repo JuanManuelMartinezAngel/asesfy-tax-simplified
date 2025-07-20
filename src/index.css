@@ -3,62 +3,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clean Modern Color Palette: Blue, Black & Teal */
+/* Modern Sesfy Color Palette: Navy Blue & Turquoise */
 @layer base {
   :root {
-    --background: 220 15% 6%; /* Clean dark background */
-    --foreground: 210 20% 95%; /* Clean white text */
+    --background: 217 32% 17%; /* Deep navy blue */
+    --foreground: 210 40% 95%; /* Clean white text */
     
-    /* Simple Blue Palette */
-    --primary: 212 100% 50%; /* Clean blue */
-    --primary-foreground: 210 20% 95%;
-    --primary-light: 212 100% 70%; 
-    --primary-dark: 212 100% 35%;
+    /* Turquoise/Teal Primary Palette */
+    --primary: 174 72% 56%; /* Bright turquoise #4ECDC4 */
+    --primary-foreground: 217 32% 17%;
+    --primary-light: 174 82% 70%; 
+    --primary-dark: 174 62% 45%;
     
-    --secondary: 220 15% 12%; /* Simple dark */
-    --secondary-foreground: 210 20% 95%;
+    --secondary: 217 28% 20%; /* Slightly lighter navy */
+    --secondary-foreground: 210 40% 95%;
     
-    /* Clean Teal Palette */
-    --accent: 180 100% 40%; /* Clean teal */
-    --accent-foreground: 210 20% 95%;
-    --accent-light: 180 100% 60%; 
-    --accent-dark: 180 100% 25%;
+    /* Accent Colors */
+    --accent: 174 72% 56%; /* Same as primary turquoise */
+    --accent-foreground: 217 32% 17%;
+    --accent-light: 174 82% 70%; 
+    --accent-dark: 174 62% 45%;
     
-    --muted: 220 15% 15%; /* Clean muted */
-    --muted-foreground: 210 15% 70%;
+    --muted: 217 20% 25%; /* Muted navy */
+    --muted-foreground: 210 20% 70%;
     
-    --border: 220 15% 20%; /* Subtle borders */
-    --input: 220 15% 15%;
-    --ring: 212 100% 50%;
+    --border: 217 20% 30%; /* Subtle borders */
+    --input: 217 20% 25%;
+    --ring: 174 72% 56%;
     
-    --card: 220 15% 8%; /* Clean card background */
-    --card-foreground: 210 20% 95%;
+    --card: 217 28% 20%; /* Card background */
+    --card-foreground: 210 40% 95%;
     
-    --popover: 220 15% 8%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 217 28% 20%;
+    --popover-foreground: 210 40% 95%;
     
     --destructive: 0 85% 60%;
-    --destructive-foreground: 210 20% 95%;
+    --destructive-foreground: 210 40% 95%;
     
-    /* Simple Gradients */
+    /* Modern Gradients */
     --gradient-primary: linear-gradient(135deg, 
-      hsl(212, 100%, 50%) 0%, 
-      hsl(212, 100%, 35%) 100%);
+      hsl(174, 72%, 56%) 0%, 
+      hsl(174, 62%, 45%) 100%);
     
     --gradient-accent: linear-gradient(135deg, 
-      hsl(180, 100%, 40%) 0%, 
-      hsl(180, 100%, 60%) 100%);
+      hsl(174, 82%, 70%) 0%, 
+      hsl(174, 72%, 56%) 100%);
     
-    --gradient-subtle: linear-gradient(135deg, 
-      hsl(220, 15%, 8%) 0%, 
-      hsl(220, 15%, 12%) 100%);
+    --gradient-background: linear-gradient(135deg, 
+      hsl(217, 32%, 17%) 0%, 
+      hsl(217, 28%, 20%) 100%);
     
     /* Clean Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
     
     /* Smooth transitions */
     --transition: all 0.2s ease-in-out;
@@ -83,12 +83,18 @@
   }
 }
 
-/* Simple, clean components */
+/* Modern components with Sesfy theme */
 @layer components {
   .glass {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
   
   .gradient-text {
@@ -109,6 +115,7 @@
     @apply px-6 py-3 rounded-lg font-medium text-white transition-all duration-200;
     background: hsl(var(--primary));
     box-shadow: var(--shadow-md);
+    border: none;
   }
   
   .btn-primary:hover {
@@ -147,8 +154,9 @@
   }
   
   .btn-accent {
-    @apply px-6 py-3 rounded-lg font-medium text-white transition-all duration-200;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200;
     background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
     box-shadow: var(--shadow-md);
   }
   
@@ -191,6 +199,33 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Sesfy specific components */
+  .sesfy-card {
+    @apply rounded-xl p-6 transition-all duration-300;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow);
+  }
+  
+  .sesfy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    border-color: hsl(var(--primary) / 0.4);
+  }
+  
+  .sesfy-button {
+    @apply px-8 py-4 rounded-lg font-semibold transition-all duration-300;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-md);
+  }
+  
+  .sesfy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: hsl(var(--primary-light));
+  }
 }
 
 /* Simple animations */
@@ -224,7 +259,7 @@
   }
 }
 
-/* Clean scrollbar */
+/* Clean scrollbar with turquoise theme */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -239,11 +274,11 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary-dark));
+  background: hsl(var(--primary-light));
 }
 
-/* Clean selection */
+/* Clean selection with turquoise */
 ::selection {
-  background: hsl(var(--primary) / 0.2);
+  background: hsl(var(--primary) / 0.3);
   color: hsl(var(--foreground));
 }

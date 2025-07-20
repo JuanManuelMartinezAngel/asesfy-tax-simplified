@@ -3,46 +3,34 @@ import { ArrowRight, CheckCircle, Play, Shield, Clock, Users } from "lucide-reac
 
 export default function HeroSection() {
   return (
-    <section id="home" className="section-padding bg-gradient-to-br from-background to-secondary">
+    <section id="home" className="section-padding bg-gradient-to-br from-background to-secondary min-h-screen flex items-center">
       <div className="container-width">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Tu declaración de la{" "}
-                <span className="gradient-text">renta perfecta</span>{" "}
-                sin complicaciones
+              <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+                <span className="text-primary font-medium text-sm">Plataforma Líder en Gestión Fiscal</span>
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                Gestión Fiscal{" "}
+                <span className="gradient-text">Simplificada</span>
               </h1>
               
-              <p className="text-lg text-muted-foreground text-balance max-w-2xl">
-                Olvídate del estrés fiscal. Nuestros expertos se encargan de todo: 
-                desde la subida de documentos hasta la presentación final. 
-                <strong className="text-accent"> Garantizado y seguro.</strong>
+              <p className="text-lg text-muted-foreground text-balance max-w-2xl leading-relaxed">
+                Automatiza tu gestión fiscal, accede a asesoramiento profesional y optimiza tus obligaciones tributarias con nuestra plataforma integral.
               </p>
-            </div>
-
-            {/* Trust indicators */}
-            <div className="flex flex-wrap gap-6">
-              {[
-                { text: "100% Online", color: "text-blue-400" },
-                { text: "Asesor Personal", color: "text-cyan-400" },
-                { text: "Totalmente Seguro", color: "text-teal-400" },
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <CheckCircle className={`w-5 h-5 ${item.color}`} />
-                  <span className="text-sm font-medium">{item.text}</span>
-                </div>
-              ))}
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                className="btn-primary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-medium text-white transition-all duration-200"
+                className="sesfy-button text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-semibold transition-all duration-300"
                 style={{
-                  background: 'hsl(212, 100%, 50%)',
-                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
+                  background: 'hsl(174, 72%, 56%)',
+                  color: 'hsl(217, 32%, 17%)',
+                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2)'
                 }}
                 onClick={(e) => {
                   e.preventDefault();
@@ -64,12 +52,12 @@ export default function HeroSection() {
                 }}
                 type="button"
                 onMouseEnter={(e) => {
-                  e.target.style.transform = 'translateY(-1px)';
-                  e.target.style.background = 'hsl(212, 100%, 35%)';
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.background = 'hsl(174, 82%, 70%)';
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.transform = 'translateY(0)';
-                  e.target.style.background = 'hsl(212, 100%, 50%)';
+                  e.target.style.background = 'hsl(174, 72%, 56%)';
                 }}
               >
                 Empezar ahora
@@ -80,12 +68,13 @@ export default function HeroSection() {
                 className="btn-secondary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-medium text-white border transition-all duration-200"
                 style={{
                   background: 'transparent',
-                  border: '1px solid hsl(220, 15%, 20%)'
+                  border: '1px solid hsl(174, 72%, 56%)',
+                  color: 'hsl(174, 72%, 56%)'
                 }}
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  console.log('Botón Ver testimonios clickeado');
+                  console.log('Botón Acceso Demo clickeado');
                   try {
                     const element = document.getElementById('testimonials');
                     if (element) {
@@ -104,72 +93,79 @@ export default function HeroSection() {
                 }}
                 type="button"
                 onMouseEnter={(e) => {
-                  e.target.style.background = 'hsl(220, 15%, 15%)';
-                  e.target.style.borderColor = 'hsl(212, 100%, 50%)';
+                  e.target.style.background = 'hsl(174, 72%, 56%)';
+                  e.target.style.color = 'hsl(217, 32%, 17%)';
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.background = 'transparent';
-                  e.target.style.borderColor = 'hsl(220, 15%, 20%)';
+                  e.target.style.color = 'hsl(174, 72%, 56%)';
                 }}
               >
                 <Play className="w-5 h-5" />
-                Ver testimonios
+                Acceso Demo
               </button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8">
-              {[
-                { number: "15K+", label: "Declaraciones" },
-                { number: "4.9★", label: "Valoración" },
-                { number: "48h", label: "Entrega media" },
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl font-bold text-primary">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
+            {/* Quick Access Demo section */}
+            <div className="bg-card/50 border border-border rounded-xl p-4 backdrop-blur-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-2 h-2 bg-destructive rounded-full"></div>
+                <span className="text-sm font-medium text-white">Acceso Rápido Demo:</span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Explora todas las funcionalidades de la plataforma sin compromiso
+              </p>
             </div>
           </div>
 
-          {/* Visual */}
+          {/* Visual Dashboard Mockup */}
           <div className="relative">
-            <div className="card-glass p-8 space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold">Seguridad garantizada</h3>
-                  <p className="text-sm text-muted-foreground">Encriptación de nivel bancario</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold">Proceso rápido</h3>
-                  <p className="text-sm text-muted-foreground">En menos de 48 horas</p>
+            <div className="sesfy-card p-8 space-y-6 bg-card/80 backdrop-blur-md">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-white">Panel de Control</h3>
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 bg-destructive rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-blue-400" />
+              <div className="space-y-4">
+                {/* Dashboard Items */}
+                <div className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg border border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-white font-medium">Declaración IRPF</span>
+                  </div>
+                  <CheckCircle className="w-5 h-5 text-primary" />
                 </div>
-                <div>
-                  <h3 className="font-semibold">Asesor personal</h3>
-                  <p className="text-sm text-muted-foreground">Dedicado solo para ti</p>
-                </div>
-              </div>
 
-              <div className="pt-6">
-                <div className="h-2 bg-muted rounded-full overflow-hidden">
-                  <div className="h-full w-3/4 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                <div className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg border border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-white font-medium">IVA Trimestral</span>
+                  </div>
+                  <CheckCircle className="w-5 h-5 text-primary" />
                 </div>
-                <p className="text-sm text-muted-foreground mt-2">Proceso completado: 75%</p>
+
+                <div className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg border border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                      <Clock className="w-4 h-4 text-yellow-500" />
+                    </div>
+                    <span className="text-white font-medium">Nóminas</span>
+                  </div>
+                  <Clock className="w-5 h-5 text-yellow-500" />
+                </div>
+
+                <div className="flex items-center justify-between p-3 bg-primary/10 rounded-lg border border-primary/20">
+                  <span className="text-white font-medium">Ahorro Fiscal</span>
+                  <span className="text-2xl font-bold text-primary">€2,340</span>
+                </div>
               </div>
             </div>
           </div>

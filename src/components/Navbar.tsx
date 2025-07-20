@@ -38,13 +38,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => scrollToSection('home')}>
-            <div className="relative">
+            <div className="flex items-center space-x-2">
               <img 
                 src="/asesfy-logo.svg" 
-                alt="Asesfy Logo" 
-                className="w-12 h-8 object-contain group-hover:scale-110 transition-transform duration-300"
+                alt="Sesfy Logo" 
+                className="w-8 h-6 object-contain group-hover:scale-110 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-lg opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300"></div>
+              <span className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
+                sesfy
+              </span>
             </div>
           </div>
 
