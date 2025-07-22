@@ -38,20 +38,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => scrollToSection('home')}>
-            <div className="flex items-center space-x-2">
-              <img 
-                src="/sesfy-logo.jpg" 
-                alt="Sesfy Logo" 
-                className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300"
-                onError={(e) => {
-                  e.currentTarget.src = "/asesfy-logo.svg";
-                  e.currentTarget.className = "w-8 h-6 object-contain group-hover:scale-110 transition-transform duration-300";
-                }}
-              />
-              <span className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
-                sesfy
-              </span>
-            </div>
+            <span className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
+              Asesfy
+            </span>
           </div>
 
           {/* Desktop Navigation */}
