@@ -25,11 +25,14 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://tally.so/r/31QNWg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Botón Empezar ahora clickeado - redirigiendo a Tally');
+                  window.open('https://tally.so/r/31QNWg', '_blank', 'noopener,noreferrer');
+                }}
+                className="inline-flex items-center justify-center gap-2 text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95 cursor-pointer"
                 style={{
                   background: 'linear-gradient(135deg, #4ECDC4, #44B3AC)',
                   color: '#1A202C',
@@ -38,18 +41,11 @@ export default function HeroSection() {
                   cursor: 'pointer',
                   boxShadow: '0 10px 25px rgba(78, 205, 196, 0.3)'
                 }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #5DD9D2, #4ECDC4)';
-                  e.currentTarget.style.boxShadow = '0 15px 35px rgba(78, 205, 196, 0.4)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #4ECDC4, #44B3AC)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(78, 205, 196, 0.3)';
-                }}
+                type="button"
               >
                 Empezar ahora
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
               
               <button 
                 className="btn-secondary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-medium text-white border transition-all duration-200"

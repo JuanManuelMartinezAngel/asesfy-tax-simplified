@@ -337,3 +337,13 @@
   outline: 2px solid #4ECDC4 !important;
   outline-offset: 2px !important;
 }
+
+/* Hero Button Hover Effects */
+button[style*="linear-gradient(135deg, #4ECDC4, #44B3AC)"]:hover {
+  background: linear-gradient(135deg, #5DD9D2, #4ECDC4) !important;
+  box-shadow: 0 15px 35px rgba(78, 205, 196, 0.4) !important;
+}
+
+button[style*="linear-gradient(135deg, #4ECDC4, #44B3AC)"]:active {
+  transform: translateY(-1px) scale(0.98) !important;
+}
