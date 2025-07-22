@@ -23,71 +23,7 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log('Botón Empezar ahora clickeado - redirigiendo a Tally');
-                  window.open('https://tally.so/r/31QNWg', '_blank', 'noopener,noreferrer');
-                }}
-                className="inline-flex items-center justify-center gap-2 text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl active:scale-95 cursor-pointer"
-                style={{
-                  background: 'linear-gradient(135deg, #4ECDC4, #44B3AC)',
-                  color: '#1A202C',
-                  textDecoration: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  boxShadow: '0 10px 25px rgba(78, 205, 196, 0.3)'
-                }}
-                type="button"
-              >
-                Empezar ahora
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              
-              <button 
-                className="btn-secondary text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-2 cursor-pointer font-medium text-white border transition-all duration-200"
-                style={{
-                  background: 'transparent',
-                  border: '1px solid hsl(174, 72%, 56%)',
-                  color: 'hsl(174, 72%, 56%)'
-                }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  console.log('Botón Acceso Demo clickeado');
-                  try {
-                    const element = document.getElementById('testimonials');
-                    if (element) {
-                      element.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start',
-                        inline: 'nearest'
-                      });
-                      console.log('Scrolling to testimonials section');
-                    } else {
-                      console.error('Testimonials section not found');
-                    }
-                  } catch (error) {
-                    console.error('Error scrolling to testimonials:', error);
-                  }
-                }}
-                type="button"
-                onMouseEnter={(e) => {
-                  e.target.style.background = 'hsl(174, 72%, 56%)';
-                  e.target.style.color = 'hsl(217, 32%, 17%)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.background = 'transparent';
-                  e.target.style.color = 'hsl(174, 72%, 56%)';
-                }}
-              >
-                <Play className="w-5 h-5" />
-                Acceso Demo
-              </button>
-            </div>
+
 
             {/* Quick Access Demo section */}
             <div className="bg-card/50 border border-border rounded-xl p-4 backdrop-blur-sm">
