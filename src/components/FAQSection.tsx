@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, Shield, User, FileText, MessageCircle } from "lucide-react";
+import { EXTERNAL_LINKS } from "@/lib/constants";
 
 const faqs = [
   {
@@ -36,7 +37,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-20 bg-secondary/30">
+    <section id="faq" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
@@ -105,7 +106,10 @@ const FAQSection = () => {
               <p className="mb-4 opacity-90">
                 Nuestro equipo está aquí para ayudarte con cualquier duda
               </p>
-              <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button 
+                className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                onClick={() => window.open(EXTERNAL_LINKS.TALLY_FORM, '_blank')}
+              >
                 Contáctanos directamente
               </button>
             </div>
