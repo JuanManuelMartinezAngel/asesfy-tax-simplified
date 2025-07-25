@@ -1,4 +1,60 @@
-# Welcome to your Lovable project
+# 🎯 Gestión Fiscal Inteligente
+
+Una plataforma moderna para la gestión automatizada de impuestos y trámites fiscales. Conecta usuarios con asesores fiscales profesionales a través de una interfaz intuitiva y completamente digital.
+
+## 🎬 Video Introductorio
+
+La aplicación incluye una sección de video introductorio que explica visualmente cómo funciona el servicio. Para añadir tu video:
+
+1. Coloca tu archivo de video en la carpeta `public/` con el nombre `video-intro.mp4`
+2. Opcionalmente, añade también una versión WebM: `video-intro.webm`
+3. El reproductor incluye controles personalizados y se adapta perfectamente al diseño de la landing page
+
+### Características del reproductor:
+- ✅ Controles personalizados elegantes
+- ✅ Soporte para pantalla completa
+- ✅ Responsive design
+- ✅ Fallback visual cuando no hay video
+- ✅ Autoplay con mute por defecto (mejores prácticas web)
+
+### 📍 Ubicación en la landing page:
+La sección de video se encuentra estratégicamente ubicada justo después del Hero Section, para captar inmediatamente la atención del usuario con una demostración visual del servicio. Incluye:
+- **Título llamativo**: "Ve cómo funciona en solo 2 minutos"
+- **Reproductor elegante**: Con controles personalizados y efectos hover
+- **Proceso resumido**: 3 pasos visuales debajo del video
+- **Diseño cohesivo**: Integrado perfectamente con el resto de la landing
+
+### 🎨 Vista previa de la sección:
+```
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│         🎬 Ve cómo funciona en solo 2 minutos      │
+│    Descubre lo sencillo que es gestionar tus...    │
+│                                                     │
+│  ┌─────────────────────────────────────────────┐   │
+│  │                                             │   │
+│  │      📺 REPRODUCTOR DE VIDEO                │   │
+│  │            (1920x1080)                     │   │
+│  │                                             │   │
+│  │     ▶️ CONTROLES PERSONALIZADOS             │   │
+│  └─────────────────────────────────────────────┘   │
+│                                                     │
+│    [1] Registro     [2] Sube Docs    [3] Resultados│
+│   💻 Rápido        📄 Fácil         ✅ Profesional │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+## ✨ Características Principales
+
+- 🎨 **Diseño Moderno**: Interfaz elegante con gradientes y animaciones fluidas
+- 📱 **Totalmente Responsive**: Optimizada para todos los dispositivos
+- 🎬 **Video Introductorio**: Sección dedicada para explicar el servicio visualmente
+- 👥 **Proceso Guiado**: Sistema paso a paso fácil de seguir
+- 🔒 **Confianza y Seguridad**: Indicadores visuales de seguridad y profesionalidad
+- 📊 **Testimonios**: Sección de reseñas de clientes satisfechos
+- ❓ **FAQ Interactiva**: Sección de preguntas frecuentes con acordeón
+- 📞 **Llamadas a la Acción**: CTAs estratégicamente ubicados
 
 ## Project info
 
