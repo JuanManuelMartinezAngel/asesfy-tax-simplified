@@ -1,93 +1,95 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+import { ArrowRight, CheckCircle, Play, Shield, Clock, Users } from "lucide-react";
 
-const HeroSection = () => {
+export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="home" className="section-padding bg-gradient-to-br from-background to-secondary min-h-screen flex items-center">
+      <div className="container-width">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="gradient-text">Olvídate de tus impuestos.</span>
-              <br />
-              <span className="text-foreground">Nosotros lo hacemos por ti.</span>
-            </h1>
-            
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              Te asignamos un asesor personal. Tú solo subes tus documentos. 
-              Nosotros lo gestionamos todo.
-            </p>
-
-            {/* Trust indicators */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-8">
-              <div className="flex items-center gap-2 text-accent">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">100% Online</span>
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+                <span className="text-primary font-medium text-sm">Plataforma Líder en Gestión Fiscal</span>
               </div>
-              <div className="flex items-center gap-2 text-accent">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">Asesor Personal</span>
-              </div>
-              <div className="flex items-center gap-2 text-accent">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">Totalmente Seguro</span>
-              </div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                Gestión Fiscal{" "}
+                <span className="gradient-text">Simplificada</span>
+              </h1>
+              
+              <p className="text-lg text-muted-foreground text-balance max-w-2xl leading-relaxed">
+                Automatiza tu gestión fiscal, accede a asesoramiento profesional y optimiza tus obligaciones tributarias con nuestra plataforma integral.
+              </p>
             </div>
 
-            {/* CTA Button */}
-            <Button 
-              size="lg"
-              className="btn-hero group"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Quiero que me lleven los impuestos
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
 
-          {/* Hero Image */}
-          <div className="relative animate-slide-up">
-            <div className="relative rounded-3xl overflow-hidden shadow-large">
-              <img 
-                src={heroImage} 
-                alt="Persona trabajando feliz sin preocuparse por impuestos"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-            </div>
-            
-            {/* Floating card */}
-            <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-2xl p-4 shadow-medium animate-float">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">¡Todo resuelto!</p>
-                  <p className="text-xs text-muted-foreground">En 48 horas</p>
-                </div>
+
+            {/* Quick Access Demo section */}
+            <div className="bg-card/50 border border-border rounded-xl p-4 backdrop-blur-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-2 h-2 bg-destructive rounded-full"></div>
+                <span className="text-sm font-medium text-white">Acceso Rápido Demo:</span>
               </div>
+              <p className="text-sm text-muted-foreground">
+                Explora todas las funcionalidades de la plataforma sin compromiso
+              </p>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+          {/* Visual Dashboard Mockup */}
+          <div className="relative">
+            <div className="sesfy-card p-8 space-y-6 bg-card/80 backdrop-blur-md">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-white">Panel de Control</h3>
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 bg-destructive rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {/* Dashboard Items */}
+                <div className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg border border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-white font-medium">Declaración IRPF</span>
+                  </div>
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                </div>
+
+                <div className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg border border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-white font-medium">IVA Trimestral</span>
+                  </div>
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                </div>
+
+                <div className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg border border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                      <Clock className="w-4 h-4 text-yellow-500" />
+                    </div>
+                    <span className="text-white font-medium">Nóminas</span>
+                  </div>
+                  <Clock className="w-5 h-5 text-yellow-500" />
+                </div>
+
+                <div className="flex items-center justify-between p-3 bg-primary/10 rounded-lg border border-primary/20">
+                  <span className="text-white font-medium">Ahorro Fiscal</span>
+                  <span className="text-2xl font-bold text-primary">€2,340</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}

@@ -1,243 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Modern Sesfy Color Palette: Navy Blue & Turquoise */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    /* Modern blue primary with professional tone */
-    --primary: 214 92% 52%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 214 100% 95%;
-    --primary-dark: 214 92% 42%;
-
-    /* Soft secondary with light blue accent */
-    --secondary: 214 32% 96%;
-    --secondary-foreground: 214 92% 52%;
-
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-
-    /* Green accent for success states */
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 142 69% 94%;
-
-    /* Purple accent for highlights */
-    --purple: 263 70% 50%;
-    --purple-foreground: 0 0% 100%;
-    --purple-light: 263 69% 95%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 214 92% 52%;
-
-    /* Design system gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(214 92% 52%), hsl(214 92% 42%));
-    --gradient-hero: linear-gradient(135deg, hsl(214 100% 95%), hsl(0 0% 100%));
-    --gradient-accent: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 69% 44%));
-    --gradient-purple: linear-gradient(135deg, hsl(263 70% 50%), hsl(263 70% 40%));
-
-    /* Shadows */
-    --shadow-soft: 0 2px 8px hsl(214 92% 52% / 0.08);
-    --shadow-medium: 0 4px 24px hsl(214 92% 52% / 0.12);
-    --shadow-large: 0 8px 32px hsl(214 92% 52% / 0.16);
-
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 217 32% 17%; /* Deep navy blue */
+    --foreground: 210 40% 95%; /* Clean white text */
+    
+    /* Turquoise/Teal Primary Palette */
+    --primary: 174 72% 56%; /* Bright turquoise #4ECDC4 */
+    --primary-foreground: 217 32% 17%;
+    --primary-light: 174 82% 70%; 
+    --primary-dark: 174 62% 45%;
+    
+    --secondary: 217 28% 20%; /* Slightly lighter navy */
+    --secondary-foreground: 210 40% 95%;
+    
+    /* Accent Colors */
+    --accent: 174 72% 56%; /* Same as primary turquoise */
+    --accent-foreground: 217 32% 17%;
+    --accent-light: 174 82% 70%; 
+    --accent-dark: 174 62% 45%;
+    
+    --muted: 217 20% 25%; /* Muted navy */
+    --muted-foreground: 210 20% 70%;
+    
+    --border: 217 20% 30%; /* Subtle borders */
+    --input: 217 20% 25%;
+    --ring: 174 72% 56%;
+    
+    --card: 217 28% 20%; /* Card background */
+    --card-foreground: 210 40% 95%;
+    
+    --popover: 217 28% 20%;
+    --popover-foreground: 210 40% 95%;
+    
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 95%;
+    
+    /* Modern Gradients */
+    --gradient-primary: linear-gradient(135deg, 
+      hsl(174, 72%, 56%) 0%, 
+      hsl(174, 62%, 45%) 100%);
+    
+    --gradient-accent: linear-gradient(135deg, 
+      hsl(174, 82%, 70%) 0%, 
+      hsl(174, 72%, 56%) 100%);
+    
+    --gradient-background: linear-gradient(135deg, 
+      hsl(217, 32%, 17%) 0%, 
+      hsl(217, 28%, 20%) 100%);
+    
+    /* Clean Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+    
+    /* Smooth transitions */
+    --transition: all 0.2s ease-in-out;
+    
+    --radius: 12px;
   }
 }
 
+/* Clean base styles */
 @layer base {
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-['Inter',sans-serif];
+    background: hsl(var(--background));
   }
-
+  
   html {
     scroll-behavior: smooth;
   }
 }
 
+/* Modern components with Sesfy theme */
 @layer components {
-  /* Button variants for the design system */
-  .btn-hero {
-    @apply bg-gradient-to-r from-primary to-primary-dark text-primary-foreground;
-    @apply px-8 py-4 rounded-xl font-semibold text-lg;
-    @apply shadow-lg hover:shadow-xl transform hover:-translate-y-1;
-    @apply transition-all duration-300 ease-out;
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-
-  .btn-secondary {
-    @apply bg-secondary text-secondary-foreground border border-border;
-    @apply px-8 py-4 rounded-xl font-semibold text-lg;
-    @apply hover:bg-muted transform hover:-translate-y-1;
-    @apply transition-all duration-300 ease-out;
+  
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
-
-  .btn-accent {
-    @apply bg-gradient-to-r from-accent to-accent/90 text-accent-foreground;
-    @apply px-6 py-3 rounded-lg font-medium;
-    @apply shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
-    @apply transition-all duration-300 ease-out;
-  }
-
-  /* Card styles */
-  .card-elevated {
-    @apply bg-card border border-border rounded-2xl p-6;
-    @apply shadow-soft hover:shadow-medium;
-    @apply transform hover:-translate-y-1;
-    @apply transition-all duration-300 ease-out;
-  }
-
-  .card-feature {
-    @apply bg-gradient-to-br from-card to-secondary/20;
-    @apply border border-border rounded-2xl p-8;
-    @apply shadow-soft hover:shadow-medium;
-    @apply transform hover:-translate-y-2 hover:scale-105;
-    @apply transition-all duration-500 ease-out;
-  }
-
-  /* Animation utilities */
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .hover\\:scale-102:hover {
-    transform: scale(1.02);
-  }
-
-  /* Gradient text */
+  
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-purple bg-clip-text text-transparent;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-medium text-white transition-all duration-200;
+    background: hsl(var(--primary));
+    box-shadow: var(--shadow-md);
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+    background: hsl(var(--primary-dark));
+  }
+
+  /* Ensure links styled as buttons work properly */
+  a.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+  }
+  
+  a.btn-primary:hover {
+    color: white;
+    text-decoration: none;
+  }
+  
+  a.btn-primary:visited {
+    color: white;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-medium text-white border transition-all duration-200;
+    background: transparent;
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .btn-secondary:hover {
+    background: hsl(var(--muted));
+    border-color: hsl(var(--primary));
+  }
+  
+  .btn-accent {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    box-shadow: var(--shadow-md);
+  }
+  
+  .btn-accent:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+    background: hsl(var(--accent-dark));
+  }
+  
+  .card-simple {
+    @apply rounded-xl p-6 transition-all duration-200;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow);
+  }
+  
+  .card-simple:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+  
+  .card-glass {
+    @apply glass rounded-xl p-6 transition-all duration-200;
+  }
+  
+  .card-glass:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Sesfy specific components */
+  .sesfy-card {
+    @apply rounded-xl p-6 transition-all duration-300;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow);
+  }
+  
+  .sesfy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    border-color: hsl(var(--primary) / 0.4);
+  }
+  
+  .sesfy-button {
+    @apply px-8 py-4 rounded-lg font-semibold transition-all duration-300;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-md);
+  }
+  
+  .sesfy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: hsl(var(--primary-light));
+  }
+
+  /* Ensure anchor tags styled as sesfy-button work perfectly */
+  a.sesfy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+  
+  a.sesfy-button:hover {
+    text-decoration: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+  
+  a.sesfy-button:visited {
+    text-decoration: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+  
+  a.sesfy-button:focus {
+    text-decoration: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* Simple animations */
+@layer utilities {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* Clean scrollbar with turquoise theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary-light));
+}
+
+/* Clean selection with turquoise */
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* Sesfy Button Styles */
+.sesfy-button {
+  background: #4ECDC4 !important;
+  color: #2C3E50 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
+  text-decoration: none !important;
+  user-select: none !important;
+  display: inline-flex !important;
+  transition: all 0.3s ease !important;
+}
+
+.sesfy-button:hover {
+  transform: translateY(-2px) !important;
+  background: #5DD9D2 !important;
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.3) !important;
+  color: #2C3E50 !important;
+  text-decoration: none !important;
+}
+
+.sesfy-button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sesfy-button:focus {
+  outline: 2px solid #4ECDC4 !important;
+  outline-offset: 2px !important;
+}
+
+/* Hero Button Hover Effects */
+button[style*="linear-gradient(135deg, #4ECDC4, #44B3AC)"]:hover {
+  background: linear-gradient(135deg, #5DD9D2, #4ECDC4) !important;
+  box-shadow: 0 15px 35px rgba(78, 205, 196, 0.4) !important;
+}
+
+button[style*="linear-gradient(135deg, #4ECDC4, #44B3AC)"]:active {
+  transform: translateY(-1px) scale(0.98) !important;
 }

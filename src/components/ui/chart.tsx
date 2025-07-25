@@ -200,9 +200,9 @@ const ChartTooltipContent = React.forwardRef<
                   formatter(item.value, item.name, item, index, item.payload)
                 ) : (
                   <>
-                    {itemConfig?.icon ? (
-                      <itemConfig.icon />
-                    ) : (
+                      {itemConfig?.icon ? (
+                        React.createElement(itemConfig.icon)
+                      ) : (
                       !hideIndicator && (
                         <div
                           className={cn(
@@ -295,7 +295,7 @@ const ChartLegendContent = React.forwardRef<
               )}
             >
               {itemConfig?.icon && !hideIcon ? (
-                <itemConfig.icon />
+                React.createElement(itemConfig.icon)
               ) : (
                 <div
                   className="h-2 w-2 shrink-0 rounded-[2px]"
